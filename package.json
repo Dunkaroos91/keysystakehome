@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "preinstall": "cd client && npm i",
-    "start": "node server/index.js",
+    "start": "concurrently \"node server/index.js\" \"cd client && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +14,8 @@
   "dependencies": {
     "csv": "^6.2.6",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
